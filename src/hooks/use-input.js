@@ -1,8 +1,9 @@
-import React from 'react'
+import { useState } from 'react'
 
-const useInput = () =>
+const useInput = (props) =>
 {
-
+    const [enteredName, setEnteredName] = useState('');
+    const [enteredNameTouched, setEnteredNameTouched] = useState(false);
 }
 
 export default useInput
