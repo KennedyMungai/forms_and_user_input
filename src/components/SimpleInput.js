@@ -29,11 +29,6 @@ const SimpleInput = (props) =>
     setEnteredEmail(event.target.value);
   };
 
-  const nameInputBlurHandler = (event) =>
-  {
-    setEnteredNameTouched(true);
-  };
-
   const emailInputBlurHandler = (event) =>
   {
     setEnteredEmailTouched(true);
