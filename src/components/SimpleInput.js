@@ -8,26 +8,16 @@ const SimpleInput = (props) =>
   const [enteredName, setEnteredName] = useState('')
   const [enteredNameIsTouched, setEnteredNameIsTouched] = useState(false)
 
-  const enteredNameIsValid
+  const enteredNameIsValid = enteredName.trim() !== ''
 
   const nameInputChangeHandler = (e) =>
   {
     setEnteredName(e.target.value)
-
-    if (enteredName.trim().length !== 0)
-    {
-      setEnteredNameIsValid(true)
-    }
   }
 
   const nameInputBlurHandler = () =>
   {
     setEnteredNameIsTouched(true)
-
-    if (enteredName.trim().length === 0)
-    {
-      setEnteredNameIsValid(false)
-    }
   }
 
   const submitHandler = (e) => 
@@ -37,15 +27,6 @@ const SimpleInput = (props) =>
     // console.log(enteredName)
 
     setEnteredNameIsTouched(true)
-
-    if (enteredName.trim().length === 0)
-    {
-      setEnteredNameIsValid(false)
-
-      return
-    }
-
-    setEnteredNameIsValid(true)
 
     setEnteredName('')
   }
