@@ -3,16 +3,16 @@ import useInput from '../hooks/use-input';
 
 const SimpleInput = (props) =>
 {
-  const { } = useInput()
-
-  const [enteredName, setEnteredName] = useState('');
-  const [enteredNameTouched, setEnteredNameTouched] = useState(false);
+  const {
+    value: enteredName,
+    isValid: enteredNameIsValid,
+    hasError: nameInputHasError,
+    valueChangeHandler: nameInputChangeHandler,
+    inputBlueHandler: nameBlueHandler
+  } = useInput(value => value.trim() !== '')
 
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
-
-  const enteredNameIsValid = enteredName.trim() !== '';
-  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
   const enteredEmailIsValid = enteredEmail.includes('@');
   const enteredEmailIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
@@ -24,10 +24,10 @@ const SimpleInput = (props) =>
     formIsValid = true;
   }
 
-  const nameInputChangeHandler = (event) =>
-  {
-    setEnteredName(event.target.value);
-  };
+  // const nameInputChangeHandler = (event) =>
+  // {
+  //   setEnteredName(event.target.value);
+  // };
 
   const emailInputChangeHandler = (event) =>
   {
