@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 
 const SimpleInput = (props) =>
 {
+  const nameInputRef = useRef()
+
   const [enteredName, setEnteredName] = useState('')
 
   const nameInputChangeHandler = (e) =>
@@ -21,7 +23,7 @@ const SimpleInput = (props) =>
     <form onSubmit={submitHandler}>
       <div className='form-control'>
         <label htmlFor='name'>Your Name</label>
-        <input type='text' id='name' onChange={nameInputChangeHandler} />
+        <input type='text' id='name' onChange={nameInputChangeHandler} ref={nameInputRef} />
       </div>
       <div className="form-actions">
         <button>Submit</button>
