@@ -24,11 +24,6 @@ const SimpleInput = (props) =>
     formIsValid = true;
   }
 
-  // const nameInputChangeHandler = (event) =>
-  // {
-  //   setEnteredName(event.target.value);
-  // };
-
   const emailInputChangeHandler = (event) =>
   {
     setEnteredEmail(event.target.value);
