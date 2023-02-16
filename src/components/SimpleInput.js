@@ -8,13 +8,15 @@ const SimpleInput = (props) =>
 
   const enteredNameIsValid = enteredName.trim() !== ''
 
+  let formIsValid = false
+
   if (enteredNameIsValid)
   {
-    setFormIsValid(true)
+    formIsValid = true
   }
   else
   {
-    setFormIsValid(false)
+    formIsValid = false
   }
 
 
