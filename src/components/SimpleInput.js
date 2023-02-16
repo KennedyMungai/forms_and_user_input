@@ -36,7 +36,9 @@ const SimpleInput = (props) =>
     setEnteredName('')
   }
 
-  const nameInputClasses = enteredNameIsValid ? 'form-control' : 'form-control invalid'
+  const nameInputIsInvalid = !enteredNameIsValid && enteredNameIsTouched
+
+  const nameInputClasses = nameInputIsInvalid ? 'form-control' : 'form-control invalid'
 
   return (
     <form onSubmit={submitHandler}>
@@ -49,7 +51,7 @@ const SimpleInput = (props) =>
           ref={nameInputRef}
           value={enteredName}
         />
-        {!enteredNameIsValid && <p className='error-text'>Please enter a valid name</p>}
+        {nameInputIsInvalid && <p className='error-text'>Please enter a valid name</p>}
       </div>
       <div className="form-actions">
         <button>Submit</button>
