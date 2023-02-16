@@ -9,7 +9,7 @@ const SimpleInput = (props) =>
     hasError: nameInputHasError,
     valueChangeHandler: nameInputChangeHandler,
     inputBlueHandler: nameInputBlurHandler,
-    reset
+    reset: resetNameInput
   } = useInput(value => value.trim() !== '')
 
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -46,7 +46,7 @@ const SimpleInput = (props) =>
 
     console.log(enteredName);
 
-    reset()
+    resetNameInput()
 
     setEnteredEmail('');
     setEnteredEmailTouched(false);
