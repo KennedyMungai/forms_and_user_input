@@ -28,16 +28,6 @@ const SimpleInput = (props) =>
     formIsValid = true;
   }
 
-  const emailInputChangeHandler = (event) =>
-  {
-    setEnteredEmail(event.target.value);
-  };
-
-  const emailInputBlurHandler = (event) =>
-  {
-    setEnteredEmailTouched(true);
-  };
-
   const formSubmissionHandler = (event) =>
   {
     event.preventDefault();
