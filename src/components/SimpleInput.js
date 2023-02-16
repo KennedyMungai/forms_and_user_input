@@ -6,8 +6,9 @@ const SimpleInput = (props) =>
   const nameInputRef = useRef()
 
   const [enteredName, setEnteredName] = useState('')
-  const [enteredNameIsValid, setEnteredNameIsValid] = useState(false)
   const [enteredNameIsTouched, setEnteredNameIsTouched] = useState(false)
+
+  const enteredNameIsValid
 
   const nameInputChangeHandler = (e) =>
   {
