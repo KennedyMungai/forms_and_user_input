@@ -5,8 +5,8 @@ const useInput = (props) =>
     const [enteredValue, setEnteredValue] = useState('');
     const [isTouched, setIsTouched] = useState(false);
 
-    const valueIsValid = enteredName.trim() !== '';
-    const hasError = !enteredNameIsValid && enteredNameTouched;
+    const valueIsValid = enteredValue.trim() !== '';
+    const hasError = !valueIsValid && isTouched;
 }
 
 export default useInput
