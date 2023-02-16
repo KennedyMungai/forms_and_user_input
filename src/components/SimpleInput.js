@@ -52,6 +52,7 @@ const SimpleInput = (props) =>
           onChange={nameInputChangeHandler}
           ref={nameInputRef}
           value={enteredName}
+          onBlur={nameInputBlueHandler}
         />
         {nameInputIsInvalid && <p className='error-text'>Please enter a valid name</p>}
       </div>
