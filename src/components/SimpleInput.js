@@ -38,8 +38,6 @@ const SimpleInput = (props) =>
   {
     event.preventDefault();
 
-    setEnteredNameTouched(true);
-
     if (!enteredNameIsValid)
     {
       return;
@@ -74,7 +72,7 @@ const SimpleInput = (props) =>
           onBlur={nameInputBlurHandler}
           value={enteredName}
         />
-        {nameInputIsInvalid && (
+        {nameInputHasError && (
           <p className='error-text'>Name must not be empty.</p>
         )}
       </div>
