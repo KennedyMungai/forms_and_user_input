@@ -6,19 +6,19 @@ const SimpleInput = (props) =>
     value: enteredName,
     isValid: enteredNameIsValid,
     hasError: nameInputHasError,
-    valueChangeHandler: nameInputChangeHandler,
-    inputBlueHandler: nameInputBlurHandler,
-    reset: resetNameInput
-  } = useInput(value => value.trim() !== '')
+    valueChangeHandler: nameChangedHandler,
+    inputBlurHandler: nameBlurHandler,
+    reset: resetNameInput,
+  } = useInput((value) => value.trim() !== '');
 
   const {
     value: enteredEmail,
     isValid: enteredEmailIsValid,
     hasError: emailInputHasError,
     valueChangeHandler: emailChangeHandler,
-    inputBlueHandler: emailBlurHandler,
-    reset: resetEmailInput
-  } = useInput(value => value.includes('@'))
+    inputBlurHandler: emailBlurHandler,
+    reset: resetEmailInput,
+  } = useInput((value) => value.includes('@'));
 
   let formIsValid = false;
 
@@ -38,9 +38,9 @@ const SimpleInput = (props) =>
 
     console.log(enteredName);
 
-    resetNameInput()
-
-    resetEmailInput()
+    // nameInputRef.current.value = ''; => NOT IDEAL, DON'T MANIPULATE THE DOM
+    resetNameInput();
+    resetEmailInput();
   };
 
   const nameInputClasses = nameInputHasError
@@ -58,8 +58,8 @@ const SimpleInput = (props) =>
         <input
           type='text'
           id='name'
-          onChange={nameInputChangeHandler}
-          onBlur={nameInputBlurHandler}
+          onChange={nameChangedHandler}
+          onBlur={nameBlurHandler}
           value={enteredName}
         />
         {nameInputHasError && (
