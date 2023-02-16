@@ -1,10 +1,8 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 
 const SimpleInput = (props) =>
 {
-  const nameInputRef = useRef()
-
   const [enteredName, setEnteredName] = useState('')
   const [enteredNameIsTouched, setEnteredNameIsTouched] = useState(false)
 
@@ -32,6 +30,7 @@ const SimpleInput = (props) =>
     setEnteredNameIsTouched(true)
 
     setEnteredName('')
+    setEnteredNameIsTouched(false)
   }
 
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameIsTouched
@@ -46,7 +45,6 @@ const SimpleInput = (props) =>
           type='text'
           id='name'
           onChange={nameInputChangeHandler}
-          ref={nameInputRef}
           value={enteredName}
           onBlur={nameInputBlurHandler}
         />
