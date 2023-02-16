@@ -12,15 +12,20 @@ const SimpleInput = (props) =>
   const nameInputChangeHandler = (e) =>
   {
     setEnteredName(e.target.value)
+
+    if (enteredName.trim().length !== 0)
+    {
+      setEnteredNameIsValid(true)
+    }
   }
 
   const nameInputBlurHandler = () =>
   {
     setEnteredNameIsTouched(true)
 
-    if (enteredName.trim().length !== 0)
+    if (enteredName.trim().length === 0)
     {
-      setEnteredNameIsValid(true)
+      setEnteredNameIsValid(false)
     }
   }
 
