@@ -8,7 +8,7 @@ const SimpleInput = (props) =>
     isValid: enteredNameIsValid,
     hasError: nameInputHasError,
     valueChangeHandler: nameInputChangeHandler,
-    inputBlueHandler: nameBlueHandler
+    inputBlueHandler: nameInputBlurHandler
   } = useInput(value => value.trim() !== '')
 
   const [enteredEmail, setEnteredEmail] = useState('');
