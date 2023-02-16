@@ -14,11 +14,6 @@ const SimpleInput = (props) =>
   {
     formIsValid = true
   }
-  else
-  {
-    formIsValid = false
-  }
-
 
   const nameInputChangeHandler = (e) =>
   {
