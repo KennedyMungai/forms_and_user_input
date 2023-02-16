@@ -16,7 +16,11 @@ const SimpleInput = (props) =>
   {
     e.preventDefault()
 
-    console.log(enteredName)
+    // console.log(enteredName)
+
+    const enteredValue = nameInputRef.current.value
+
+    console.log(enteredValue)
   }
 
   return (
