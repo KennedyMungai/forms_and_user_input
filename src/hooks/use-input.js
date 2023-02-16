@@ -7,6 +7,11 @@ const useInput = (validateValue) =>
 
     const valueIsValid = validateValue(enteredValue);
     const hasError = !valueIsValid && isTouched;
+
+    return {
+        value: enteredValue,
+        hasError,
+    }
 }
 
 export default useInput
