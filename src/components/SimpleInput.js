@@ -65,7 +65,7 @@ const SimpleInput = (props) =>
         {nameInputIsInvalid && <p className='error-text'>Please enter a valid name</p>}
       </div>
       <div className="form-actions">
-        <button>Submit</button>
+        <button disabled={!formIsValid}>Submit</button>
       </div>
     </form>
   );
