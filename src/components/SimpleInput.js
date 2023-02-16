@@ -8,7 +8,8 @@ const SimpleInput = (props) =>
     isValid: enteredNameIsValid,
     hasError: nameInputHasError,
     valueChangeHandler: nameInputChangeHandler,
-    inputBlueHandler: nameInputBlurHandler
+    inputBlueHandler: nameInputBlurHandler,
+    reset
   } = useInput(value => value.trim() !== '')
 
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -45,9 +46,7 @@ const SimpleInput = (props) =>
 
     console.log(enteredName);
 
-    // nameInputRef.current.value = ''; => NOT IDEAL, DON'T MANIPULATE THE DOM
-    setEnteredName('');
-    setEnteredNameTouched(false);
+    reset()
 
     setEnteredEmail('');
     setEnteredEmailTouched(false);
