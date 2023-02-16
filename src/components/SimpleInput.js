@@ -18,11 +18,9 @@ const SimpleInput = (props) =>
   {
     setEnteredNameIsTouched(true)
 
-    if (enteredName.trim().length === 0)
+    if (enteredName.trim().length !== 0)
     {
-      setEnteredNameIsValid(false)
-
-      return
+      setEnteredNameIsValid(true)
     }
   }
 
