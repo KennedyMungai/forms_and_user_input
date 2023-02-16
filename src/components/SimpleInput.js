@@ -21,6 +21,8 @@ const SimpleInput = (props) =>
 
     if (enteredName.trim().length === 0)
     {
+      setEnteredNameIsValid(false)
+
       return
     }
 
