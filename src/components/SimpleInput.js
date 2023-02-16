@@ -24,7 +24,10 @@ const SimpleInput = (props) =>
   {
     e.preventDefault()
 
-    // console.log(enteredName)
+    if (!enteredNameIsValid)
+    {
+      return
+    }
 
     setEnteredNameIsTouched(true)
 
