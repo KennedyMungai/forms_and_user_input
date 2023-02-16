@@ -46,6 +46,7 @@ const SimpleInput = (props) =>
           ref={nameInputRef}
           value={enteredName}
         />
+        {!enteredNameIsValid && <p style={{ color: 'red' }}>Please enter a valid name</p>}
       </div>
       <div className="form-actions">
         <button>Submit</button>
