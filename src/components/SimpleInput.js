@@ -9,6 +9,19 @@ const SimpleInput = (props) =>
 
   const enteredNameIsValid = enteredName.trim() !== ''
 
+  useEffect(() =>
+  {
+    if (enteredNameIsValid)
+    {
+      setFormIsValid(true)
+    }
+    else
+    {
+      setFormIsValid(false)
+    }
+  }, [enteredNameIsValid,])
+
+
   const nameInputChangeHandler = (e) =>
   {
     setEnteredName(e.target.value)
