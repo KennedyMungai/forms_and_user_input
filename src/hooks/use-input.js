@@ -20,6 +20,7 @@ const useInput = (validateValue) =>
 
     return {
         value: enteredValue,
+        valueIsValid,
         hasError,
         valueChangedHandler,
         inputBlurHandler
