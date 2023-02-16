@@ -41,8 +41,7 @@ const SimpleInput = (props) =>
 
     resetNameInput()
 
-    setEnteredEmail('');
-    setEnteredEmailTouched(false);
+    resetEmailInput()
   };
 
   const nameInputClasses = nameInputHasError
