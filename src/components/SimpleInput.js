@@ -14,6 +14,18 @@ const SimpleInput = (props) =>
     setEnteredName(e.target.value)
   }
 
+  const nameInputBlurHandler = () =>
+  {
+    setEnteredNameIsTouched(true)
+
+    if (enteredName.trim().length === 0)
+    {
+      setEnteredNameIsValid(false)
+
+      return
+    }
+  }
+
   const submitHandler = (e) => 
   {
     e.preventDefault()
@@ -52,7 +64,7 @@ const SimpleInput = (props) =>
           onChange={nameInputChangeHandler}
           ref={nameInputRef}
           value={enteredName}
-          onBlur={nameInputBlueHandler}
+          onBlur={nameInputBlurHandler}
         />
         {nameInputIsInvalid && <p className='error-text'>Please enter a valid name</p>}
       </div>
