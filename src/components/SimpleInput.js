@@ -46,10 +46,6 @@ const SimpleInput = (props) =>
 
     setEnteredNameIsValid(true)
 
-    const enteredValue = nameInputRef.current.value
-
-    console.log(enteredValue)
-
     setEnteredName('')
   }
 
