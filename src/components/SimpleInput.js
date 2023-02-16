@@ -5,6 +5,7 @@ const SimpleInput = (props) =>
 {
   const [enteredName, setEnteredName] = useState('')
   const [enteredNameIsTouched, setEnteredNameIsTouched] = useState(false)
+  const [formIsValid, setFormIsValid] = useState(false)
 
   const enteredNameIsValid = enteredName.trim() !== ''
 
